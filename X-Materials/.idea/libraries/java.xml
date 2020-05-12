@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../poi-bin-4.1.2-20200217/poi-4.1.2" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../poi-bin-4.1.2-20200217/poi-4.1.2/docs/apidocs/dev" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/osgi/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/osgi/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/contrib/poi-ruby/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/examples/src" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/excelant/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/excelant/testcases" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/integrationtest" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/ooxml/java" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/ooxml/testcases" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/scratchpad/src" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/scratchpad/testcases" />
+      <root url="jar://$PROJECT_DIR$/../poi-src-4.1.2-20200217.zip!/poi-4.1.2/src/testcases" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../poi-bin-4.1.2-20200217/poi-4.1.2" recursive="false" />
+  </library>
+</component>
