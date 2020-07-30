@@ -1,0 +1,1 @@
+update usr set password = (select md5(password));
