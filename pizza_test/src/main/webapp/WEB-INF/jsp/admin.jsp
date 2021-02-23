@@ -37,6 +37,8 @@
         </c:forEach>
     </table>
     <a href="/">Главная</a>
+    <br>
+    <a href="/admin/admin-pizza">Меню редактирования пицц</a>
 </div>
 </body>
 </html>

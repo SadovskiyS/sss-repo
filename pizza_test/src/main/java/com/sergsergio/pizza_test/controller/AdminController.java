@@ -1,5 +1,7 @@
 package com.sergsergio.pizza_test.controller;
 
+import com.sergsergio.pizza_test.repository.PizzaRepository;
+import com.sergsergio.pizza_test.service.PizzaService;
 import com.sergsergio.pizza_test.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
