@@ -45,6 +45,13 @@ public class PizzaController {
         return "redirect:/admin/admin-pizza";
     }
 
+    @RequestMapping("/admin/admin-pizza/updatePizza")
+    public String updatePizza(@RequestParam("pizzaId") Long id, Model model){
+        Pizza pizza = pizzaService.findPizzaById(id);
+        model.addAttribute("pizza", pizza);
+        return "admin-pizza-add";
+    }
+
 //    @RequestMapping("/askPizza")
 //    public String askPizzaDetails(Model model){
 //        model.addAttribute("pizzaNew", new Pizza());
