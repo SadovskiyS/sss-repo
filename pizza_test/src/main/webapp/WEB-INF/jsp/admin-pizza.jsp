@@ -15,8 +15,10 @@
     <table>
         <thead>
         <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Цена за 30 см</th>
+        <th>Цена за 50 см</th>
         </thead>
         <c:forEach items="${allPizzas}" var="pizza">
             <c:url var="updateButton" value="/admin/admin-pizza/updatePizza">
@@ -26,6 +28,8 @@
                 <td>${pizza.id}</td>
                 <td>${pizza.name}</td>
                 <td>${pizza.descr}</td>
+                <td>${pizza.price30SM} грн</td>
+                <td>${pizza.price50SM} грн</td>
                 <td>
                     <form action="${pageContext.request.contextPath}/admin/admin-pizza" method="post">
                         <input type="hidden" name="pizzaId" value="${pizza.id}"/>

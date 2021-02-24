@@ -12,6 +12,8 @@ import java.util.Optional;
 public class PizzaService {
     @Autowired
     PizzaRepository pizzaRepository;
+//    @Autowired
+//    SizePriceRepository sizePriceRepository;
 
     public Pizza findPizzaById(Long id){
         Optional<Pizza> pizzaFromDb = pizzaRepository.findById(id);
@@ -38,4 +40,32 @@ public class PizzaService {
         }
         return false;
     }
+
+//    public Long findPizzaIdByName(String name) throws IDNotFoundException {
+//        Long id = pizzaRepository.findPizzaByName(name);
+//        if(id == null){
+//            throw new IDNotFoundException();
+//        }
+//        return id;
+//    }
+
+//    public List<SizePricePizza> allSizeAndPricePizza(){
+//        return sizePriceRepository.findAll();
+//    }
+//
+//    public SizePricePizza findSizePricePizzaById(Long id){
+//        Optional<SizePricePizza> sizePriceFromDb = sizePriceRepository.findById(id);
+//        return sizePriceFromDb.orElse(new SizePricePizza());
+//    }
+//
+//    public boolean saveSizePricePizza(SizePricePizza sizePricePizza, String name) throws IDNotFoundException {
+//        Long pizzaId = findPizzaIdByName(name);
+//        Optional<SizePricePizza> sizePricePizzaFromDb = sizePriceRepository.findById(pizzaId);
+//        sizePricePizza = sizePricePizzaFromDb.orElse(new SizePricePizza());
+//        if(sizePricePizza != null){
+//            return false;
+//        }
+//        sizePriceRepository.save(sizePricePizza);
+//        return true;
+//    }
 }

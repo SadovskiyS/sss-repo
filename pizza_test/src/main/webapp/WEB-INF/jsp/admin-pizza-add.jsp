@@ -11,11 +11,16 @@
 </head>
 <body>
 <div>
+    <h3>Добавление пиццы в БД!</h3>
     <form:form action="/admin/admin-pizza/savePizza" modelAttribute="pizza">
         <form:hidden path="id"></form:hidden>
-        Name<form:input path="name"></form:input>
+        Название пиццы<form:input path="name"></form:input>
         <br><br>
-        Description<form:input path="descr"></form:input>
+        Описание<form:input path="descr"></form:input>
+        <br><br>
+        Цена за 30 см<form:input path="price30SM"></form:input>
+        <br><br>
+        Цена за 50 см<form:input path="price50SM"></form:input>
         <br><br>
         <input type="submit" value="OK">
     </form:form>
