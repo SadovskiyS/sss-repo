@@ -2,6 +2,8 @@ package com.sergsergio.pizza_test.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "pizzas")
@@ -15,7 +17,6 @@ public class Pizza {
     private String descr;
     private int price30SM;
     private int price50SM;
-
 //    @Transient
 //    @OneToOne(mappedBy = "pizza")
 //    private SizePricePizza sizePricePizza;

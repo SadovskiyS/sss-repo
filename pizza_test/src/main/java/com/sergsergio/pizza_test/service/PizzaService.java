@@ -5,6 +5,8 @@ import com.sergsergio.pizza_test.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,16 +14,16 @@ import java.util.Optional;
 public class PizzaService {
     @Autowired
     PizzaRepository pizzaRepository;
-//    @Autowired
-//    SizePriceRepository sizePriceRepository;
 
+    List<Pizza> pizzaList = new ArrayList<>();
     public Pizza findPizzaById(Long id){
         Optional<Pizza> pizzaFromDb = pizzaRepository.findById(id);
         return pizzaFromDb.orElse(new Pizza());
     }
 
     public List<Pizza> allPizzas(){
-        return pizzaRepository.findAll();
+        pizzaList = pizzaRepository.findAll();
+        return pizzaList;
     }
 
     public boolean savePizza(Pizza pizza){
@@ -41,31 +43,11 @@ public class PizzaService {
         return false;
     }
 
-//    public Long findPizzaIdByName(String name) throws IDNotFoundException {
-//        Long id = pizzaRepository.findPizzaByName(name);
-//        if(id == null){
-//            throw new IDNotFoundException();
-//        }
-//        return id;
-//    }
+    public int getPrice30SMById(Long pizza_id){
+        return pizzaRepository.getPrice30SMById(pizza_id);
+    }
 
-//    public List<SizePricePizza> allSizeAndPricePizza(){
-//        return sizePriceRepository.findAll();
-//    }
-//
-//    public SizePricePizza findSizePricePizzaById(Long id){
-//        Optional<SizePricePizza> sizePriceFromDb = sizePriceRepository.findById(id);
-//        return sizePriceFromDb.orElse(new SizePricePizza());
-//    }
-//
-//    public boolean saveSizePricePizza(SizePricePizza sizePricePizza, String name) throws IDNotFoundException {
-//        Long pizzaId = findPizzaIdByName(name);
-//        Optional<SizePricePizza> sizePricePizzaFromDb = sizePriceRepository.findById(pizzaId);
-//        sizePricePizza = sizePricePizzaFromDb.orElse(new SizePricePizza());
-//        if(sizePricePizza != null){
-//            return false;
-//        }
-//        sizePriceRepository.save(sizePricePizza);
-//        return true;
-//    }
+    public int getPrice50SMById(Long pizza_id){
+        return pizzaRepository.getPrice50SMById(pizza_id);
+    }
 }
