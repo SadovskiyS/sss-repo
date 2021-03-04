@@ -2,12 +2,13 @@ package com.sergsergio.pizza_test.controller;
 
 import com.sergsergio.pizza_test.entity.Pizza;
 import com.sergsergio.pizza_test.service.PizzaService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -15,6 +16,8 @@ import javax.validation.Valid;
 public class PizzaController {
     @Autowired
     private PizzaService pizzaService;
+
+    Logger log = Logger.getLogger(PizzaService.class);
 
     @GetMapping("/admin/admin-pizza")
     public String pizzaList(Model model) {
@@ -39,14 +42,22 @@ public class PizzaController {
         return "admin-pizza-add";
     }
 
-    @RequestMapping("/admin/admin-pizza/savePizza")
-    public String savePizza(@ModelAttribute ("pizza") Pizza pizza){
-        pizzaService.savePizza(pizza);
-        return "redirect:/admin/admin-pizza";
+    @RequestMapping(path = "/admin/admin-pizza/savePizza")
+    public String savePizza(@Valid @ModelAttribute("pizza") Pizza pizza,BindingResult result, MultipartFile file ){
+        log.debug("PizzaController: метод savePizza - начало ");
+        if(result.hasErrors()){
+            log.debug("PizzaController: метод savePizza - ошибки есть ");
+            return "admin-pizza-add";
+
+        }
+            log.debug("PizzaController: метод savePizza - ошибок нет ");
+            pizzaService.savePizza(pizza, file);
+            return "redirect:/admin/admin-pizza";
     }
 
     @RequestMapping("/admin/admin-pizza/updatePizza")
-    public String updatePizza(@RequestParam("pizzaId") Long id, Model model){
+    public String updatePizza(@RequestParam("pizzaId") Long id,
+                              Model model){
         Pizza pizza = pizzaService.findPizzaById(id);
         model.addAttribute("pizza", pizza);
         return "admin-pizza-add";

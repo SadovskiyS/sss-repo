@@ -2,8 +2,6 @@ package com.sergsergio.pizza_test.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "pizzas")
@@ -12,14 +10,14 @@ public class Pizza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Size(min = 5, max = 15, message = "Минимум 5 и максимум 15 символов!")
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
     @Size(min = 5, max = 70, message = "Минимум 5 и максимум 70 символов!")
     private String descr;
     private int price30SM;
     private int price50SM;
-//    @Transient
-//    @OneToOne(mappedBy = "pizza")
-//    private SizePricePizza sizePricePizza;
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
 
     public Pizza() {
     }
@@ -48,15 +46,6 @@ public class Pizza {
         this.descr = descr;
     }
 
-//    public SizePricePizza getSizePricePizza() {
-//        return sizePricePizza;
-//    }
-//
-//    public void setSizePricePizza(SizePricePizza sizePricePizza) {
-//        this.sizePricePizza = sizePricePizza;
-//    }
-
-
     public int getPrice30SM() {
         return price30SM;
     }
@@ -71,5 +60,13 @@ public class Pizza {
 
     public void setPrice50SM(int price50SM) {
         this.price50SM = price50SM;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

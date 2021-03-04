@@ -32,10 +32,13 @@
                 <h2 class="text-center">Celentano</h2>
                 <p class="text-center">Информация всякая...</p>
             </div>
-            <div class="row justify-content-center features"><div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 item">
+            <div class="row justify-content-center features">
 
+             <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 item">
                 <div class="box"><img />
                     <c:forEach items="${allPizzas}" var="pizza" end="0">
+                        <img alt=""  src="data:image/png;base64,${pizza.image}">
+                        <br><br>
                     <h3 class="name">${pizza.name}</h3>
                     <p class="description">${pizza.descr}</p>
                         <input type="hidden" id="id" value="${pizza.id}">
@@ -51,8 +54,9 @@
                     <fieldset></fieldset>
                 </div>
             </div>
-                </div>
+
         </div>
+     </div>
 </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

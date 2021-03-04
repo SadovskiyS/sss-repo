@@ -19,6 +19,7 @@
         <th>Описание</th>
         <th>Цена за 30 см</th>
         <th>Цена за 50 см</th>
+        <th>Изображение</th>
         </thead>
         <c:forEach items="${allPizzas}" var="pizza">
             <c:url var="updateButton" value="/admin/admin-pizza/updatePizza">
@@ -30,6 +31,7 @@
                 <td>${pizza.descr}</td>
                 <td>${pizza.price30SM} грн</td>
                 <td>${pizza.price50SM} грн</td>
+                <td><img alt=""  src="data:image/png;base64,${pizza.image}" style="width: 150px; height: 150px;"></td>
                 <td>
                     <form action="${pageContext.request.contextPath}/admin/admin-pizza" method="post">
                         <input type="hidden" name="pizzaId" value="${pizza.id}"/>

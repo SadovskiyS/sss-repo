@@ -12,15 +12,19 @@
 <body>
 <div>
     <h3>Добавление пиццы в БД!</h3>
-    <form:form action="/admin/admin-pizza/savePizza" modelAttribute="pizza">
+    <form:form action="/admin/admin-pizza/savePizza" modelAttribute="pizza" enctype="multipart/form-data">
         <form:hidden path="id"></form:hidden>
         Название пиццы<form:input path="name"></form:input>
+        <form:errors path="name"></form:errors>
         <br><br>
         Описание<form:input path="descr"></form:input>
+        <form:errors path="descr"></form:errors>
         <br><br>
         Цена за 30 см<form:input path="price30SM"></form:input>
         <br><br>
         Цена за 50 см<form:input path="price50SM"></form:input>
+        <br><br>
+        Изображение<input type="file" name="file">
         <br><br>
         <input type="submit" value="OK">
     </form:form>
